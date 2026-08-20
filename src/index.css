@@ -4,12 +4,89 @@
   box-sizing: border-box;
 }
 
+body{
+
+  font-family: 'Playfair Display';
+}
+
+button{
+
+  font-family: 'Playfair Display';
+  cursor: pointer;
+  background-color: black;
+  font-weight: 600;
+  color: white;
+}
+
+.address-container{
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+
 .root-container{
 
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  
+}
+
+.loading-container{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.home-container{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+  
+}
+
+.label{
+
+  
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.input-field{
+
+  border-style: solid;
+  font-size: 24px;
+  border-color: black;
+  margin-right: 10px;
+}
+
+.search-btn{
+
+  border-radius: 5px;
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  border-color: black;
+  padding: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+ol{
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .nav-bar-container{
@@ -35,6 +112,26 @@ a{
   text-decoration: none;
   font-size: 24px;
   
+}
+
+.about-container{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.back-btn{
+
+  font-size: 24px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+a.active{
+
+  color: red;
 }
 
 .individual-food-container{

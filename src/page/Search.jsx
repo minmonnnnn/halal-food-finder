@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router"
 import Foodies from "../component/Foodies"
+import loading_gif from "../assets/loading.gif"
+import loading_vid from "../assets/loading2.webm"
 
 
 export default function Search(){
@@ -8,12 +10,14 @@ export default function Search(){
     const [searchParams] = useSearchParams()
     const searchTerm = searchParams.get('q')
     const [res, setRes] = useState([])
+    const [loading, setLoading] = useState(true)
     const payLoad = {q: `${searchTerm}`}
     useEffect(() => {
 
         const fetchData = async () => {
             try{
 
+                setLoading(true)
                 const res = await fetch("/api/search",
                     {
                         method: "POST",
@@ -23,8 +27,9 @@ export default function Search(){
                     
                 )
                 const data = await res.json()
+                
                 if(data){
-
+                    setLoading(false)
                     setRes(prevRes => data.message.map(obj => 
 
                         
@@ -40,6 +45,7 @@ export default function Search(){
 
             }
             catch(error){
+                
                 console.error("Could not communicate with python backend")
             }
         }
@@ -48,8 +54,12 @@ export default function Search(){
     return(
         <div>
             <h1>Search Page</h1>
-            <p>{searchTerm}</p>
+            <div className="loading-container">
+                {loading? <p>Loading...</p>: ""}
+                {loading? <img src = {loading_gif}></img>: ""}
+            </div>
             {res}
+            
         </div>
     )
 }

@@ -7,7 +7,7 @@ export default function NavBar(){
     return(
         <div className="nav-bar-container">
             <NavLink to = "/">Home</NavLink>
-            <NavLink to = "/search">Find Food</NavLink>
+            <NavLink to = "/about">About</NavLink>
         </div>
     )
 }
